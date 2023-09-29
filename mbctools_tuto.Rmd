@@ -1,0 +1,182 @@
+---
+title: "mbctools tutorial"
+author: "Christian Barnabé, Guilhem Sempéré, Vincent Manzanilla, Joel Moo Millan and Etienne Waleckx"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+    toc: yes
+    toc_depth: 3
+
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```yaml
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+```
+# Pre-required intallation
+
+> **WARNING**
+> Ensure that all of these software applications are installed and tested before the workshop. If you encounter any issues, contact the organizer.
+
+## For Windows Users
+
+### PowerShell
+
+[PowerShell]("https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows")
+is a cross-platform task automation solution that comprises a command-line shell, a scripting language, and a configuration management framework.
+
+
+## For All Operating Systems
+### Text Editor
+
+If you don't already have a suitable text editor, please install one from the following list:
+
+- Sublime Text: [Sublime]("https://www.sublimetext.com")
+- Notepad++: [Notepad]("https://notepad-plus-plus.org")
+- Atom: [Atom]("https://github.blog/2022-06-08-sunsetting-atom/")
+
+#### VSEARCH
+[VSEARCH]("https://github.com/torognes/vsearch/releases") stands for vectorized search and is a powerful search and clustering tool. It takes advantage of parallelism through SIMD vectorization and multiple threads to perform fast and accurate alignments.
+
+To install, use one of the following methods:
+
+```yaml
+pip install vsearch
+```
+
+or 
+
+```yaml
+wget https://github.com/torognes/vsearch/archive/v2.23.0.tar.gz
+tar xzf v2.23.0.tar.gz
+cd vsearch-2.23.0
+./autogen.sh
+./configure CFLAGS="-O3" CXXFLAGS="-O3"
+make
+make install  # as root or sudo make installwget https://github.com/torognes/vsearch/archive/v2.23.0.tar.gz
+tar xzf v2.23.0.tar.gz
+cd vsearch-2.23.0
+./autogen.sh
+./configure CFLAGS="-O3" CXXFLAGS="-O3"
+make
+make install  # as root or sudo make install
+```
+
+### Python
+
+Check python in your installation:
+
+```yaml
+python3
+
+```
+
+It should return: 
+
+```yaml
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+
+```
+
+To exit, type:
+
+```yaml
+quit()
+```
+
+If python is not working properly, pleases install [python]("https://www.python.org/downloads/").
+
+### MEGA
+
+The Molecular Evolutionary Genetics Analysis ([MEGA]("https://www.megasoftware.net")
+) software contains many sophisticated methods and tools for phylogenomics and phylomedicine.
+
+
+
+### Mbctools3
+
+Please install mbctools: 
+
+```yaml
+pip install mbctools
+```
+
+
+### BLAST+
+
+Basic Local Alignment Search Tool (BLAST) is a sequence similarity search program. It quickly searches a sequence database for matches to a query sequence. BLAST comes in several variants to compare nucleotide or protein queries against nucleotide or protein databases. BLAST also provides an "expect" value, offering statistical information about the significance of each alignment.
+
+To install BLAST+ locally, follow the steps described [here]("installhttps://www.ncbi.nlm.nih.gov/books/NBK569861/").
+
+
+# Tutorial Powershell and bash
+
+## Why use the command line? 
+### Pros
+> Functionality is highly extensible / interoperable between tools
+
+> Workflows are easy to capture (just text)
+
+> Wider variety of tools are available
+
+> Only way to access most HPC computing resources
+
+### Cons
+> Functionality is less “discoverable” for novices
+
+> Lack of visual metaphors means usage is less intuitive
+
+> Graphics can summarise data very effectively (eg plots, genome browsers, 3D Models)
+
+We recommend you to familiarized with Unix shell or Powershell before the workshop.
+
+You fill find a good tutorial for unix shell [here]("https://swcarpentry.github.io/shell-novice/") and [here]("http://swcarpentry.github.io/shell-novice-es") in  Spanish. 
+
+
+
+# mbctools
+
+## Manual method with VSEARCH
+### Background on the test data
+
+Study in Bolivia: We conducted an MBC study on 10 samples (Triatoma infestans) for 5 gene fragments:
+
+
+| Marker | size | Targeted organism       | Primer Forward            | Primer Reverse               |
+|--------|------|-------------------------|---------------------------|------------------------------|
+| CytB   | 462  | Trypanosoma infestans   | GGACAAATATCATGAGGAGCAACAG | ATTACTCCTCCTAGCTTATTAGGAATTG |
+| 12S    | 215  | blood meals(vertebrate) | CCCAAACTGGGATTAGATACCC    | GTTTGCTGAAGATGGCGGTA         |
+| 16S    | 140  | microbiome              | GATTAGATACCCTGGTAG        | CCGTCAATTCCTTTRAGTTT         |
+| COII   | 414  | Trypanosoma cruzi       | AGTTTGTGGATACTTATTGGTTTGT | CATAACTCGCTGCATTGYCC         |
+| COII   | 405  | Trypanosoma cruzi       | CGCCATGTTGTGAATATTGG      | GGCGGACCACAATGAGTATC         |
+
+
+
+
+[ADD MAP]
+
+[ADD ARTICLE]
+
+
+
+
+!!! question How many nanopore reads do we have?
+
+!!! question How long is the longest read?
+
+!!! question What is the average read length?
+
+
+
+
